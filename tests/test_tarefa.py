@@ -24,5 +24,40 @@ class TestTarefa(unittest.TestCase):
         self.assertTrue(tarefa.concluida)
 
 
+    def test_rejeita_registro_que_nao_e_dicionario(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario(["14/11/2026", "Estudar"])
+
+    def test_rejeita_ausencia_do_campo_data(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario({"Tarefa": "Estudar"})
+
+    def test_rejeita_ausencia_do_campo_tarefa(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario({"Data": "14/11/2026"})
+
+    def test_rejeita_data_que_nao_e_string(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario({
+                "Data": 14112026,
+                "Tarefa": "Estudar"
+            })
+
+    def test_rejeita_descricao_que_nao_e_string(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario({
+                "Data": "14/11/2026",
+                "Tarefa": 123
+            })
+
+    def test_rejeita_status_que_nao_e_booleano(self):
+        with self.assertRaises(ValueError):
+            Tarefa.de_dicionario({
+                "Data": "14/11/2026",
+                "Tarefa": "Estudar",
+                "Concluída": "sim"
+            })
+
+
 if __name__ == "__main__":
     unittest.main()

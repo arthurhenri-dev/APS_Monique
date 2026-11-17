@@ -25,3 +25,24 @@ Uma execução posterior do fluxo de qualidade no GitHub Actions, na branch evid
 Os resultados acima foram observados no GitHub Actions e complementam o registro anterior, realizado em um ambiente no qual Radon e Pylint não estavam disponíveis.
 
 A cobertura apresentada refere-se ao código de produção. Os resultados podem variar entre execuções e versões do código.
+
+
+**ATUALIZAÇÃO — 17/11/2026 (execução posterior)**
+
+Uma nova execução local dos testes automatizados e da análise de cobertura apresentou os seguintes resultados:
+
+- Testes automatizados: 34 aprovados, 0 falhas.
+- Cobertura de testes do pacote `taskly`: 97% (248 instruções analisadas e 8 não cobertas).
+- `InterfaceTerminal`: 100% de cobertura (97 instruções analisadas e nenhuma não coberta).
+
+Comando utilizado:
+
+```bash
+python -m coverage erase
+python -m coverage run --source=taskly -m unittest discover -s tests
+python -m coverage report -m
+```
+
+Os resultados anteriores de Radon e Pylint permanecem registrados, pois não foi realizada uma nova execução dessas ferramentas nesta medição.
+
+A cobertura apresentada refere-se exclusivamente ao código de produção do pacote `taskly`.

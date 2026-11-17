@@ -1,25 +1,34 @@
+Relatório de cobertura atualizado em 17/11/2026
+
+Comando executado:
+python -m coverage erase
+python -m coverage run --source=taskly -m unittest discover -s tests
+python -m coverage report -m
+
+Resultado:
+248 instruções
+8 não cobertas
+97% de cobertura total
+
+InterfaceTerminal: 100% de cobertura.
+
 Name                                         Stmts   Miss  Cover   Missing
 --------------------------------------------------------------------------
-taskly/__init__.py                               0      0   100%
-taskly/decorators/__init__.py                    0      0   100%
-taskly/decorators/repositorio_backup.py         16      1    94%   14
-taskly/domain/__init__.py                        0      0   100%
-taskly/domain/tarefa.py                         28      3    89%   20, 44-45
-taskly/factories/__init__.py                     0      0   100%
-taskly/factories/fabrica_repositorio.py         11      1    91%   11
-taskly/gerenciador_tarefas.py                   36      3    92%   26, 28, 45
-taskly/interface_terminal.py                    97     40    59%   27, 31, 33, 39-40, 70-83, 92-104, 107-110, 113-116
-taskly/repositories/__init__.py                  0      0   100%
-taskly/repositories/repositorio_json.py         26      1    96%   26
-taskly/repositories/repositorio_tarefas.py       8      2    75%   9, 13
-taskly/strategies/__init__.py                    0      0   100%
-taskly/strategies/estrategia_ordenacao.py        5      1    80%   9
-taskly/strategies/ordenar_por_data.py            4      0   100%
-taskly/strategies/ordenar_por_descricao.py       4      0   100%
-tests/__init__.py                                0      0   100%
-tests/test_gerenciador.py                       48      1    98%   63
-tests/test_interface.py                         31      1    97%   42
-tests/test_repositorio_json.py                  43      1    98%   52
-tests/test_tarefa.py                            20      1    95%   28
+taskly\__init__.py                               0      0   100%
+taskly\decorators\__init__.py                    0      0   100%
+taskly\decorators\repositorio_backup.py         16      1    94%   14
+taskly\domain\__init__.py                        0      0   100%
+taskly\domain\tarefa.py                         39      1    97%   20
+taskly\factories\__init__.py                     0      0   100%
+taskly\factories\fabrica_repositorio.py         11      1    91%   11
+taskly\gerenciador_tarefas.py                   38      1    97%   28
+taskly\interface_terminal.py                    97      0   100%
+taskly\repositories\__init__.py                  0      0   100%
+taskly\repositories\repositorio_json.py         26      1    96%   26
+taskly\repositories\repositorio_tarefas.py       8      2    75%   9, 13
+taskly\strategies\__init__.py                    0      0   100%
+taskly\strategies\estrategia_ordenacao.py        5      1    80%   9
+taskly\strategies\ordenar_por_data.py            4      0   100%
+taskly\strategies\ordenar_por_descricao.py       4      0   100%
 --------------------------------------------------------------------------
-TOTAL                                          377     56    85%
+TOTAL                                          248      8    97%
