@@ -1,0 +1,50 @@
+
+name: Analise de qualidade Taskly
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  qualidade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install -r requirements-dev.txt
+
+      - name: Executar testes e cobertura
+        run: |
+          python -m coverage run --source=taskly -m unittest discover -s tests -v
+          python -m coverage report -m | tee coverage.txt
+
+      - name: Executar Radon
+        run: |
+          python -m radon cc taskly -s -a | tee radon_complexidade.txt
+          python -m radon mi taskly -s | tee radon_manutencao.txt
+
+      - name: Executar Pylint
+        run: |
+          python -m pylint taskly --exit-zero | tee pylint.txt
+
+      - name: Disponibilizar relatorios
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-taskly
+          path: |
+            coverage.txt
+            radon_complexidade.txt
+            radon_manutencao.txt
+            pylint.txt
+          if-no-files-found: warn
