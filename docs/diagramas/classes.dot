@@ -3,12 +3,15 @@ digraph TasklyClasses {
   node [shape=record, style="rounded", fontname="Arial", fontsize=10];
   edge [fontname="Arial", fontsize=9, arrowsize=0.8];
   Interface [label="{InterfaceTerminal| - _gerenciador | + executar()\\l + _listar_tarefas()\\l + _adicionar_tarefa()\\l + _concluir_tarefa()\\l + _excluir_tarefa()\\l}"];
-  Manager [label="{GerenciadorTarefas| - _repositorio\\l - _tarefas\\l | + adicionar_tarefa()\\l + consultar_tarefas()\\l + concluir_tarefa()\\l + excluir_tarefa()\\l}"];
+  Manager [label="{GerenciadorTarefas| - _repositorio\\l - _tarefas\\l | + adicionar_tarefa()\\l + consultar_tarefas()\\l + consultar_pendentes()\\l + concluir_tarefa()\\l + excluir_tarefa()\\l}"];
   Repo [label="{Interface: RepositorioTarefas| | + carregar()\\l + salvar(tarefas)\\l}", style="rounded,dashed"];
   Json [label="{RepositorioJSON| - caminho\\l | + carregar()\\l + salvar(tarefas)\\l}"];
   Decorator [label="{RepositorioComBackup| - _repositorio\\l | + carregar()\\l + salvar(tarefas)\\l}"];
   Task [label="{Tarefa| + data: date\\l + descricao: str\\l + concluida: bool\\l | + concluir()\\l + para_dicionario()\\l}"];
   Factory [label="{CriadorRepositorioJSON| - caminho\\l | + criar_repositorio()\\l}"];
+  FactoryBase [label="{CriadorRepositorio| | + criar_repositorio()\\l}", style="rounded,dashed"];
+  Factory -> Json [label="cria"];
+  Factory -> FactoryBase [arrowhead=empty, style=dashed, label="herda"];
   Strategy [label="{Interface: EstrategiaOrdenacao| | + ordenar(tarefas)\\l}", style="rounded,dashed"];
   Date [label="{OrdenarPorData| | + ordenar(tarefas)\\l}"];
   Desc [label="{OrdenarPorDescricao| | + ordenar(tarefas)\\l}"];

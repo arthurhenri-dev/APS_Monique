@@ -13,3 +13,15 @@ Pylint: não disponível no ambiente (comando não encontrado). Análise estáti
   pylint taskly
 
 Não foram inventados valores de complexidade, manutenibilidade ou nota Pylint.
+
+ATUALIZAÇÃO — 17/11/2026
+
+Uma execução posterior do fluxo de qualidade no GitHub Actions, na branch evidencia-tdd, apresentou os seguintes resultados:
+
+- Cobertura de testes do pacote taskly: 96% (237 instruções analisadas e 9 não cobertas).
+- Complexidade ciclomática média (Radon): 2,21 — classificação A.
+- Nota de análise estática (Pylint): 8,46/10.
+
+Os resultados acima foram observados no GitHub Actions e complementam o registro anterior, realizado em um ambiente no qual Radon e Pylint não estavam disponíveis.
+
+A cobertura apresentada refere-se ao código de produção. Os resultados podem variar entre execuções e versões do código.
