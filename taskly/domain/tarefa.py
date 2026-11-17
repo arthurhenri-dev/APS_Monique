@@ -46,4 +46,3 @@ class Tarefa:
             f"Data: {self.data.strftime('%d/%m/%Y')} | "
             f"Tarefa: {self.descricao} | Status: {status}"
         )
-
