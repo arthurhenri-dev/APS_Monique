@@ -48,7 +48,4 @@ class GerenciadorTarefas:
         return self._tarefas[indice]
 
     def consultar_pendentes(self):
-        return [
-            tarefa for tarefa in self.tarefas
-            if not tarefa.concluida
-        ]
+        return [tarefa for tarefa in self._tarefas if not tarefa.concluida]
