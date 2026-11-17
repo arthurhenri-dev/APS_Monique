@@ -69,6 +69,14 @@ class TestGerenciador(unittest.TestCase):
         self.assertEqual(len(pendentes), 1)
         self.assertEqual(pendentes[0].descricao, "Apresentar trabalho")
 
+    def test_rejeita_indice_booleano_true(self):
+        with self.assertRaises(TypeError):
+            self.gerenciador._obter_por_indice(True)
+
+    def test_rejeita_indice_booleano_false(self):
+        with self.assertRaises(TypeError):
+            self.gerenciador._obter_por_indice(False)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -41,7 +41,7 @@ class GerenciadorTarefas:
         return removida
         
     def _obter_por_indice(self, indice):
-        if not isinstance(indice, int):
+        if isinstance(indice, bool) or not isinstance(indice, int):
             raise TypeError("O índice da tarefa deve ser um número inteiro.")
         if indice < 0 or indice >= len(self._tarefas):
             raise IndexError("Não existe tarefa nessa posição.")

@@ -34,10 +34,27 @@ class Tarefa:
 
     @classmethod
     def de_dicionario(cls, dados):
+        if not isinstance(dados, dict):
+            raise ValueError("Cada tarefa deve ser representada por um objeto JSON.")
+
+        if "Data" not in dados or "Tarefa" not in dados:
+            raise ValueError("Cada tarefa deve conter os campos 'Data' e 'Tarefa'.")
+
+        if not isinstance(dados["Data"], str):
+            raise ValueError("O campo 'Data' deve ser uma string.")
+
+        if not isinstance(dados["Tarefa"], str):
+            raise ValueError("O campo 'Tarefa' deve ser uma string.")
+
+        concluida = dados.get("Concluída", False)
+
+        if not isinstance(concluida, bool):
+            raise ValueError("O campo 'Concluída' deve ser booleano.")
+
         return cls(
             data=dados["Data"],
             descricao=dados["Tarefa"],
-            concluida=dados.get("Concluída", False),
+            concluida=concluida,
         )
         
     def __str__(self):
