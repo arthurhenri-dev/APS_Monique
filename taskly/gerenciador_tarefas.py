@@ -46,3 +46,9 @@ class GerenciadorTarefas:
         if indice < 0 or indice >= len(self._tarefas):
             raise IndexError("Não existe tarefa nessa posição.")
         return self._tarefas[indice]
+
+    def consultar_pendentes(self):
+        return [
+            tarefa for tarefa in self.tarefas
+            if not tarefa.concluida
+        ]
