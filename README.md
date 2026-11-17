@@ -59,3 +59,16 @@ Consulte `docs/relatorio_tecnico.md` para as decisões de projeto e limitações
 - `docs/metricas_execucao.txt`: cobertura observada e comandos pendentes para Radon/Pylint.
 
 A animação de inicialização e a mensagem animada de encerramento do código original foram preservadas na InterfaceTerminal, com constantes nomeadas. O relatório Word complementar registra as decisões e limitações conhecidas.
+
+## Validação de testes atualizada (17/11/2026)
+
+Foram adicionados 8 testes de fluxos e validações da interface em `tests/test_interface.py`.
+
+```bash
+python -m pytest -q
+python -m coverage erase
+python -m coverage run --source=taskly -m pytest -q
+python -m coverage report -m
+```
+
+Na execução de validação: **25 testes aprovados**, **96% de cobertura de instruções do código da aplicação** e **100% de cobertura de instruções da interface**. Consulte `docs/validacao_testes_atualizada.md`. Arquivos históricos de cobertura no repositório podem apresentar resultados anteriores.

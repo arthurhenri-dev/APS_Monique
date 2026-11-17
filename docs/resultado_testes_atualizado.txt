@@ -1,0 +1,11 @@
+Execução independente — 17/11/2026
+Comando: python -m pytest -q
+25 passed
+
+Comandos de cobertura:
+python -m coverage erase
+python -m coverage run --source=taskly -m pytest -q
+python -m coverage report -m
+
+TOTAL: 235 statements, 9 missed, 96% coverage
+InterfaceTerminal: 97 statements, 0 missed, 100% coverage
