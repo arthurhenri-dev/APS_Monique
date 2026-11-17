@@ -38,37 +38,50 @@ Foi adotada uma organização em camadas simples:
 | Salvamento poderia deixar arquivo incompleto em interrupção | Escrita temporária seguida de substituição | Escrita atômica |
 
 ## 6. Testes
-Os testes usam `unittest` e cobrem:
-- validação da entidade;
-- cadastro, conclusão e exclusão;
-- ordenação por data e descrição;
-- arquivo inexistente;
-- salvamento e recuperação;
-- JSON inválido;
-- criação pelo Factory Method;
-- backup pelo Decorator.
 
-Execute `python -m unittest discover -s tests -v` para reproduzir a execução.
+Os testes automatizados foram desenvolvidos com `unittest` e executados pelo GitHub Actions. Eles verificam operações de cadastro, consulta, conclusão e exclusão de tarefas, validações, ordenação, persistência em JSON e funcionalidades relacionadas aos padrões de projeto.
 
-## 7. TDD — funcionalidade de ordenação
-Os testes de ordenação estão em `tests/test_gerenciador.py`. Para apresentar evidência de TDD na entrega, a equipe deve reproduzir e registrar a sequência abaixo no ambiente de desenvolvimento:
-1. Antes de criar `OrdenarPorData` e `OrdenarPorDescricao`, escrever os testes que definem a ordem esperada.
-2. Executar os testes nesse estado inicial e registrar a falha esperada (Red).
-3. Implementar a interface `EstrategiaOrdenacao` e as estratégias concretas (Green).
-4. Executar novamente os testes e registrar a aprovação.
-5. Se necessário, reorganizar o código sem alterar o comportamento (Refactor).
+Na execução bem-sucedida analisada, o projeto alcançou **96% de cobertura**, com 237 instruções analisadas e 9 não cobertas.
 
-**Importante:** o pacote entregue contém os testes e a implementação final, mas não contém capturas de tela de uma execução histórica em estado Red. A equipe deve produzir essas capturas ao reproduzir a sequência, sem apresentar uma falha simulada como se fosse registro anterior.
+A execução dos testes pode ser reproduzida com:
 
-## 8. Métricas
-As métricas devem ser coletadas no ambiente da equipe após a instalação das ferramentas:
-- Complexidade ciclomática: `radon cc taskly -s -a`
-- Índice de manutenibilidade: `radon mi taskly -s`
-- Análise estática: `pylint taskly`
-- Cobertura: `coverage run -m unittest discover -s tests` e `coverage report -m`
+`python -m unittest discover -s tests -v`
 
-Não foram inseridos valores numéricos estimados neste relatório. Registrem a saída real dessas ferramentas e, se possível, comparem com a versão anterior.
+## 7. TDD — Consulta de tarefas pendentes
 
+Para demonstrar o ciclo de desenvolvimento orientado a testes (TDD), foi utilizada a funcionalidade de consulta de tarefas pendentes.
+
+O histórico da branch `evidencia-tdd` registra três etapas:
+
+- **RED — commit `9a3acef`:** criação do teste para consultar somente tarefas pendentes.
+- **GREEN — commit `7824189`:** implementação do método `consultar_pendentes()` no gerenciador.
+- **REFACTOR — commit `5c60e19`:** simplificação da implementação, mantendo o comportamento esperado.
+
+Após as alterações, a execução do GitHub Actions foi concluída com sucesso.
+
+Os commits documentam a sequência de alterações. A comprovação de uma execução com teste falhando na etapa RED depende do registro correspondente dessa execução.
+
+## 8. Métricas e análise estática
+
+A análise de qualidade foi realizada por meio do GitHub Actions, utilizando Coverage, Radon e Pylint.
+
+Os resultados registrados foram:
+
+- **Cobertura de testes:** 96%.
+- **Complexidade ciclomática média:** 2,21, classificação A pelo Radon.
+- **Pylint:** 8,46/10.
+
+A organização em camadas favorece a coesão, pois cada componente concentra responsabilidades relacionadas à sua finalidade. O acoplamento é reduzido pela separação entre o gerenciador de tarefas e a implementação concreta de persistência, por meio da abstração `RepositorioTarefas`.
+
+Essas observações sobre coesão e acoplamento são qualitativas; não foram apresentados indicadores quantitativos específicos para essas duas características.
+
+Os comandos utilizados para a análise são:
+
+- `radon cc taskly -s -a`
+- `radon mi taskly -s`
+- `pylint taskly`
+- `coverage run --source=taskly -m unittest discover -s tests -v`
+- `coverage report -m`
 ## 9. Decisões e limitações
 - A aplicação é de terminal e utiliza arquivo JSON; não foi introduzido banco de dados. A animação de carregamento e a mensagem animada de encerramento do programa original foram preservadas na InterfaceTerminal, usando constantes nomeadas para controlar quantidade de etapas e intervalo.
 - O Decorator cria um único arquivo de backup (`tarefas.backup.json`), atualizado a cada salvamento posterior ao primeiro. Para histórico de versões, seria necessário evoluir a estratégia de backup.
