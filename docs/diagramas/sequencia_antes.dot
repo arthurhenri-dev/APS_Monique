@@ -4,7 +4,7 @@ digraph Before {
   edge [fontname="Arial", fontsize=9];
   Usuario -> TaskLy [label="escolhe adicionar tarefa"];
   TaskLy -> TaskLy [label="input(data, descrição)\\ncria Tarefa\\nadiciona à lista"];
-  TaskLy -> Jsonzinho [label="salvar_tarefas(lista)"];
-  Jsonzinho -> ArquivoJSON [label="grava JSON"];
+  TaskLy -> Json [label="salvar_tarefas(lista)"];
+  Json -> ArquivoJSON [label="grava JSON"];
   TaskLy -> Usuario [label="mensagem de sucesso"];
 }

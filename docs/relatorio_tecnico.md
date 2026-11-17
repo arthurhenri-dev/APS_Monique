@@ -38,15 +38,23 @@ Foi adotada uma organização em camadas simples:
 | Caminho relativo dependia do diretório atual | Caminho padrão calculado a partir do projeto | Robustez de persistência |
 | Salvamento poderia deixar arquivo incompleto em interrupção | Escrita temporária seguida de substituição | Escrita atômica |
 
-## 6. Testes
+## **6. Testes**
 
-Os testes automatizados foram desenvolvidos com `unittest` e executados pelo GitHub Actions. Eles verificam operações de cadastro, consulta, conclusão e exclusão de tarefas, validações, ordenação, persistência em JSON e funcionalidades relacionadas aos padrões de projeto.
+Os testes automatizados foram desenvolvidos com `unittest` e executados localmente e pelo GitHub Actions. Eles verificam operações de cadastro, consulta, conclusão e exclusão de tarefas, validações, ordenação, persistência em JSON e funcionalidades relacionadas aos padrões de projeto.
 
-Na execução bem-sucedida analisada, o projeto alcançou **96% de cobertura**, com 237 instruções analisadas e 9 não cobertas.
+Na execução local mais recente, realizada em 17/11/2026, o projeto alcançou **98% de cobertura**, com 248 instruções analisadas e 6 não cobertas. Foram executados **36 testes automatizados, todos aprovados, sem falhas**.
 
 A execução dos testes pode ser reproduzida com:
 
 `python -m unittest discover -s tests -v`
+
+A cobertura pode ser verificada com:
+
+```bash
+python -m coverage erase
+python -m coverage run --source=taskly -m unittest discover -s tests
+python -m coverage report -m
+```
 
 ## 7. TDD — Consulta de tarefas pendentes
 
@@ -62,15 +70,37 @@ Após as alterações, a execução do GitHub Actions foi concluída com sucesso
 
 A etapa RED foi registrada na execução #9 do GitHub Actions, quando o teste falhou porque o método `consultar_pendentes()` ainda não existia. Na execução #10, após a implementação, o teste passou. Na execução #11, após a refatoração, o fluxo de qualidade continuou aprovado. Esses registros, juntamente com o histórico de commits, documentam o ciclo TDD realizado na branch `evidencia-tdd`.
 
-## 8. Métricas e análise estática
+## **8. Métricas e análise estática**
 
-A análise de qualidade foi realizada por meio do GitHub Actions, utilizando Coverage, Radon e Pylint.
+A análise de qualidade foi realizada por meio do GitHub Actions e de execuções locais, utilizando Coverage, Radon e Pylint.
 
-Os resultados registrados foram:
+**Resultados da execução no GitHub Actions — 17/11/2026:**
 
-- **Cobertura de testes:** 96%.
+- **Cobertura de testes:** 96% (237 instruções analisadas e 9 não cobertas).
 - **Complexidade ciclomática média:** 2,21, classificação A pelo Radon.
 - **Pylint:** 8,46/10.
+
+**Resultados da execução local posterior — 17/11/2026:**
+
+- **Testes automatizados:** 36 aprovados, 0 falhas.
+- **Cobertura de testes:** 98% (248 instruções analisadas e 6 não cobertas).
+- **Tarefa:** 100% de cobertura.
+- **GerenciadorTarefas:** 100% de cobertura.
+- **InterfaceTerminal:** 100% de cobertura.
+
+Os resultados de Radon e Pylint permanecem referentes à execução anterior no GitHub Actions, pois essas ferramentas não foram executadas novamente na medição local posterior.
+
+A organização em camadas favorece a coesão, pois cada componente concentra responsabilidades relacionadas à sua finalidade. O acoplamento é reduzido pela separação entre o gerenciador de tarefas e a implementação concreta de persistência, por meio da abstração `RepositorioTarefas`.
+
+Essas observações sobre coesão e acoplamento são qualitativas; não foram apresentados indicadores quantitativos específicos para essas duas características.
+
+Os comandos utilizados para a análise são:
+
+- `radon cc taskly -s -a`
+- `radon mi taskly -s`
+- `pylint taskly`
+- `python -m coverage run --source=taskly -m unittest discover -s tests`
+- `python -m coverage report -m`
 
 A organização em camadas favorece a coesão, pois cada componente concentra responsabilidades relacionadas à sua finalidade. O acoplamento é reduzido pela separação entre o gerenciador de tarefas e a implementação concreta de persistência, por meio da abstração `RepositorioTarefas`.
 
