@@ -34,11 +34,12 @@ class GerenciadorTarefas:
         self._repositorio.salvar(self._tarefas)
         return tarefa
     
-    def excluir_tarefa(self, indice):    
-    self._obter_por_indice(indice)
-    removida = self._tarefas.pop(indice)
-    self._repositorio.salvar(self._tarefas)
-    return removida
+    
+    def excluir_tarefa(self, indice):
+        self._obter_por_indice(indice)
+        removida = self._tarefas.pop(indice)
+        self._repositorio.salvar(self._tarefas)
+        return removida
 
     def _obter_por_indice(self, indice):
         if not isinstance(indice, int):
