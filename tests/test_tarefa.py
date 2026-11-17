@@ -14,6 +14,10 @@ class TestTarefa(unittest.TestCase):
         with self.assertRaises(ValueError):
             Tarefa("45/19/2026", "Estudar")
 
+    def test_rejeita_data_que_nao_e_date_nem_string(self):
+        with self.assertRaises(TypeError):
+            Tarefa(123, "Estudar padrões")
+
     def test_rejeita_descricao_vazia(self):
         with self.assertRaises(ValueError):
             Tarefa("14/11/2026", "   ")

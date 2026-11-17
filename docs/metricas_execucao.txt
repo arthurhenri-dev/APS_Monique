@@ -46,3 +46,28 @@ python -m coverage report -m
 Os resultados anteriores de Radon e Pylint permanecem registrados, pois não foi realizada uma nova execução dessas ferramentas nesta medição.
 
 A cobertura apresentada refere-se exclusivamente ao código de produção do pacote `taskly`.
+
+
+
+**ATUALIZAÇÃO — 17/11/2026 (execução posterior)**
+
+Uma nova execução local dos testes automatizados e da análise de cobertura apresentou os seguintes resultados:
+
+- Testes automatizados: 36 aprovados, 0 falhas.
+- Cobertura de testes do pacote `taskly`: 98% (248 instruções analisadas e 6 não cobertas).
+- `Tarefa`: 100% de cobertura (39 instruções analisadas e nenhuma não coberta).
+- `GerenciadorTarefas`: 100% de cobertura (38 instruções analisadas e nenhuma não coberta).
+- `InterfaceTerminal`: 100% de cobertura (97 instruções analisadas e nenhuma não coberta).
+
+Comandos utilizados:
+
+```bash
+python -m unittest discover -s tests -v
+python -m coverage erase
+python -m coverage run --source=taskly -m unittest discover -s tests
+python -m coverage report -m
+```
+
+Os resultados anteriores de Radon e Pylint permanecem registrados, pois não foi realizada uma nova execução dessas ferramentas nesta medição.
+
+A cobertura apresentada refere-se exclusivamente ao código de produção do pacote `taskly`. Os resultados podem variar entre execuções e versões do código.

@@ -1,34 +1,39 @@
-Relatório de cobertura atualizado em 17/11/2026
+# Relatório de cobertura atualizado em 17/11/2026
 
-Comando executado:
+**Comando executado:**
+```bash
 python -m coverage erase
 python -m coverage run --source=taskly -m unittest discover -s tests
 python -m coverage report -m
+```
 
-Resultado:
-248 instruções
-8 não cobertas
-97% de cobertura total
+**Resultado:**
+- 248 instruções
+- 6 não cobertas
+- 98% de cobertura total
+- 36 testes aprovados, sem falhas.
 
 InterfaceTerminal: 100% de cobertura.
 
+```text
 Name                                         Stmts   Miss  Cover   Missing
 --------------------------------------------------------------------------
 taskly\__init__.py                               0      0   100%
 taskly\decorators\__init__.py                    0      0   100%
 taskly\decorators\repositorio_backup.py         16      1    94%   14
 taskly\domain\__init__.py                        0      0   100%
-taskly\domain\tarefa.py                         39      1    97%   20
+taskly\domain\tarefa.py                         39      0   100%
 taskly\factories\__init__.py                     0      0   100%
 taskly\factories\fabrica_repositorio.py         11      1    91%   11
-taskly\gerenciador_tarefas.py                   38      1    97%   28
+taskly\gerenciador_tarefas.py                   38      0   100%
 taskly\interface_terminal.py                    97      0   100%
 taskly\repositories\__init__.py                  0      0   100%
 taskly\repositories\repositorio_json.py         26      1    96%   26
 taskly\repositories\repositorio_tarefas.py       8      2    75%   9, 13
 taskly\strategies\__init__.py                    0      0   100%
 taskly\strategies\estrategia_ordenacao.py        5      1    80%   9
-taskly\strategies\ordenar_por_data.py            4      0   100%
+taskly\strategies\ordenar_por_data.py             4      0   100%
 taskly\strategies\ordenar_por_descricao.py       4      0   100%
 --------------------------------------------------------------------------
-TOTAL                                          248      8    97%
+TOTAL                                          248      6    98%
+```
