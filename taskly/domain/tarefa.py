@@ -39,7 +39,11 @@ class Tarefa:
             descricao=dados["Tarefa"],
             concluida=dados.get("Concluída", False),
         )
-
+        
     def __str__(self):
         status = "Concluída" if self.concluida else "Pendente"
-        return f"Data: {self.data.strftime('%d/%m/%Y')} | Tarefa: {self.descricao} | Status: {status}"
+        return (
+            f"Data: {self.data.strftime('%d/%m/%Y')} | "
+            f"Tarefa: {self.descricao} | Status: {status}"
+        )
+
