@@ -58,7 +58,7 @@ class TestGerenciador(unittest.TestCase):
         ordenadas = self.gerenciador.consultar_tarefas(OrdenarPorDescricao())
         self.assertEqual([t.descricao for t in ordenadas], ["Abacaxi", "Zebra"])
 
-        def test_consulta_somente_tarefas_pendentes(self):
+    def test_consulta_somente_tarefas_pendentes(self):
         self.gerenciador.adicionar_tarefa("20/11/2026", "Estudar")
         self.gerenciador.adicionar_tarefa("21/11/2026", "Apresentar trabalho")
 
