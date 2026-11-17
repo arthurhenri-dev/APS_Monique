@@ -1,0 +1,10 @@
+Execução reproduzida durante a preparação da entrega:
+  python -m unittest discover -v
+
+Resultado: 17 testes executados; 17 aprovados; 0 falhas; 0 erros.
+
+Cobertura reproduzida com:
+  coverage run -m unittest discover
+  coverage report -m
+
+Consulte cobertura_execucao.txt para o detalhamento por módulo e percentual total.

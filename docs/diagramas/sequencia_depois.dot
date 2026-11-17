@@ -1,0 +1,14 @@
+digraph After {
+  graph [rankdir=LR, bgcolor="white", label="Sequência — depois da refatoração", labelloc=t, fontsize=18, fontname="Arial"];
+  node [shape=box, style="rounded,filled", fillcolor="#f3f3f3", fontname="Arial"];
+  edge [fontname="Arial", fontsize=9];
+  Usuario -> Interface [label="informa data e descrição"];
+  Interface -> Manager [label="adicionar_tarefa(data, descrição)"];
+  Manager -> Tarefa [label="valida e cria entidade"];
+  Manager -> Decorator [label="salvar(tarefas)"];
+  Decorator -> JSON [label="faz backup, se arquivo existe"];
+  Decorator -> JSON [label="encaminha salvamento"];
+  JSON -> Arquivo [label="serializa e grava"];
+  Manager -> Interface [label="retorna tarefa"];
+  Interface -> Usuario [label="confirma cadastro"];
+}

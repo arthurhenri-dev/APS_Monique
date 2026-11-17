@@ -1,0 +1,15 @@
+Execução real realizada no ambiente de preparação da entrega.
+
+Testes automatizados: 17 aprovados, 0 falhas.
+Cobertura (coverage.py): (valor atualizado no arquivo cobertura_execucao.txt; consultar o total apresentado após a última execução).
+
+Radon: não disponível no ambiente (comando não encontrado). Complexidade ciclomática e índice de manutenibilidade precisam ser coletados no computador da equipe com:
+  pip install radon
+  radon cc taskly -s -a
+  radon mi taskly -s
+
+Pylint: não disponível no ambiente (comando não encontrado). Análise estática precisa ser coletada com:
+  pip install pylint
+  pylint taskly
+
+Não foram inventados valores de complexidade, manutenibilidade ou nota Pylint.

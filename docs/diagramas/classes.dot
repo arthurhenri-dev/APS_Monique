@@ -1,0 +1,30 @@
+digraph TasklyClasses {
+  graph [rankdir=LR, bgcolor="white", label="Diagrama de classes — Task.ly refatorado", labelloc=t, fontsize=20, fontname="Arial", nodesep=0.45, ranksep=0.65];
+  node [shape=record, style="rounded", fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=9, arrowsize=0.8];
+  Interface [label="{InterfaceTerminal| - _gerenciador | + executar()\\l + _listar_tarefas()\\l + _adicionar_tarefa()\\l + _concluir_tarefa()\\l + _excluir_tarefa()\\l}"];
+  Manager [label="{GerenciadorTarefas| - _repositorio\\l - _tarefas\\l | + adicionar_tarefa()\\l + consultar_tarefas()\\l + concluir_tarefa()\\l + excluir_tarefa()\\l}"];
+  Repo [label="{Interface: RepositorioTarefas| | + carregar()\\l + salvar(tarefas)\\l}", style="rounded,dashed"];
+  Json [label="{RepositorioJSON| - caminho\\l | + carregar()\\l + salvar(tarefas)\\l}"];
+  Decorator [label="{RepositorioComBackup| - _repositorio\\l | + carregar()\\l + salvar(tarefas)\\l}"];
+  Task [label="{Tarefa| + data: date\\l + descricao: str\\l + concluida: bool\\l | + concluir()\\l + para_dicionario()\\l}"];
+  Factory [label="{CriadorRepositorioJSON| - caminho\\l | + criar_repositorio()\\l}"];
+  Strategy [label="{Interface: EstrategiaOrdenacao| | + ordenar(tarefas)\\l}", style="rounded,dashed"];
+  Date [label="{OrdenarPorData| | + ordenar(tarefas)\\l}"];
+  Desc [label="{OrdenarPorDescricao| | + ordenar(tarefas)\\l}"];
+  Main [label="{main.py| | + main()\\l}"];
+  Interface -> Manager [label="usa"];
+  Manager -> Repo [label="depende da abstração"];
+  Json -> Repo [arrowhead=empty, style=dashed, label="implementa"];
+  Decorator -> Repo [arrowhead=empty, style=dashed, label="implementa"];
+  Decorator -> Json [label="envolve"];
+  Manager -> Task [label="administra 0..*"];
+  Manager -> Strategy [label="usa opcionalmente"];
+  Date -> Strategy [arrowhead=empty, style=dashed];
+  Desc -> Strategy [arrowhead=empty, style=dashed];
+  Factory -> Json [label="cria"];
+  Main -> Factory [label="compõe"];
+  Main -> Decorator [label="configura"];
+  Main -> Manager [label="configura"];
+  Main -> Interface [label="inicia"];
+}

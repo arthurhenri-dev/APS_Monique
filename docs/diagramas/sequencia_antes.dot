@@ -1,0 +1,10 @@
+digraph Before {
+  graph [rankdir=LR, bgcolor="white", label="Sequência — antes da refatoração", labelloc=t, fontsize=18, fontname="Arial"];
+  node [shape=box, style="rounded,filled", fillcolor="#f3f3f3", fontname="Arial"];
+  edge [fontname="Arial", fontsize=9];
+  Usuario -> TaskLy [label="escolhe adicionar tarefa"];
+  TaskLy -> TaskLy [label="input(data, descrição)\\ncria Tarefa\\nadiciona à lista"];
+  TaskLy -> Jsonzinho [label="salvar_tarefas(lista)"];
+  Jsonzinho -> ArquivoJSON [label="grava JSON"];
+  TaskLy -> Usuario [label="mensagem de sucesso"];
+}
