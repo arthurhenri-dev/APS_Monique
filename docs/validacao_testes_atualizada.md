@@ -4,8 +4,9 @@ Esta atualização acrescenta **8 testes** ao arquivo `tests/test_interface.py`,
 
 ## Resultados reproduzidos
 
-- `python -m pytest -q`: **25 testes aprovados**, sem falhas.
-- `python -m coverage run --source=taskly -m pytest -q` e `python -m coverage report -m`: **96% de cobertura de instruções do pacote `taskly`** (235 instruções, 9 não executadas).
+- `python -m unittest discover -s tests -v`: **26 testes aprovados**, sem falhas.
+- `python -m coverage erase`
+- `python -m coverage run --source=taskly -m unittest discover -s tests` e `python -m coverage report -m`: **96% de cobertura de instruções do pacote `taskly`** (237 instruções, 9 não executadas).
 - `taskly/interface_terminal.py`: **100% de cobertura de instruções** (97 instruções, nenhuma ausente).
 
 ## O que os novos testes verificam
