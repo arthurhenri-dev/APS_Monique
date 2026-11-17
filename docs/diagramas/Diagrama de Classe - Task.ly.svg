@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2226pt" height="528pt" viewBox="0.00 0.00 2226.00 528.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 524)">
+<title>TasklyClasses</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-524 2221.68,-524 2221.68,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="1108.84" y="-498" font-family="Arial" font-size="20.00">Diagrama de classes — Task.ly refatorado</text>
+<!-- Interface -->
+<g id="node1" class="node">
+<title>Interface</title>
+<path fill="none" stroke="black" d="M224.77,-227.5C224.77,-227.5 818.75,-227.5 818.75,-227.5 824.75,-227.5 830.75,-233.5 830.75,-239.5 830.75,-239.5 830.75,-251.5 830.75,-251.5 830.75,-257.5 824.75,-263.5 818.75,-263.5 818.75,-263.5 224.77,-263.5 224.77,-263.5 218.77,-263.5 212.77,-257.5 212.77,-251.5 212.77,-251.5 212.77,-239.5 212.77,-239.5 212.77,-233.5 218.77,-227.5 224.77,-227.5"/>
+<text xml:space="preserve" text-anchor="middle" x="259.67" y="-242.5" font-family="Arial" font-size="10.00">InterfaceTerminal</text>
+<polyline fill="none" stroke="black" points="306.58,-227.5 306.58,-263.5"/>
+<text xml:space="preserve" text-anchor="middle" x="346.82" y="-242.5" font-family="Arial" font-size="10.00">- _gerenciador</text>
+<polyline fill="none" stroke="black" points="387.06,-227.5 387.06,-263.5"/>
+<text xml:space="preserve" text-anchor="middle" x="608.9" y="-242.5" font-family="Arial" font-size="10.00">+ executar()\l + _listar_tarefas()\l + _adicionar_tarefa()\l + _concluir_tarefa()\l + _excluir_tarefa()\l</text>
+</g>
+<!-- Manager -->
+<g id="node2" class="node">
+<title>Manager</title>
+<path fill="none" stroke="black" d="M921.77,-170.5C921.77,-170.5 1627.47,-170.5 1627.47,-170.5 1633.47,-170.5 1639.47,-176.5 1639.47,-182.5 1639.47,-182.5 1639.47,-194.5 1639.47,-194.5 1639.47,-200.5 1633.47,-206.5 1627.47,-206.5 1627.47,-206.5 921.77,-206.5 921.77,-206.5 915.77,-206.5 909.77,-200.5 909.77,-194.5 909.77,-194.5 909.77,-182.5 909.77,-182.5 909.77,-176.5 915.77,-170.5 921.77,-170.5"/>
+<text xml:space="preserve" text-anchor="middle" x="962.23" y="-185.5" font-family="Arial" font-size="10.00">GerenciadorTarefas</text>
+<polyline fill="none" stroke="black" points="1014.7,-170.5 1014.7,-206.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1079.39" y="-185.5" font-family="Arial" font-size="10.00">- _repositorio\l - _tarefas\l</text>
+<polyline fill="none" stroke="black" points="1144.08,-170.5 1144.08,-206.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1391.77" y="-185.5" font-family="Arial" font-size="10.00">+ adicionar_tarefa()\l + consultar_tarefas()\l + consultar_pendentes()\l + concluir_tarefa()\l + excluir_tarefa()\l</text>
+</g>
+<!-- Interface&#45;&gt;Manager -->
+<g id="edge3" class="edge">
+<title>Interface-&gt;Manager</title>
+<path fill="none" stroke="black" d="M766.28,-227.01C847.62,-220.84 938.43,-213.94 1020.49,-207.72"/>
+<polygon fill="black" stroke="black" points="1020.66,-210.51 1028.43,-207.11 1020.24,-204.93 1020.66,-210.51"/>
+<text xml:space="preserve" text-anchor="middle" x="870.26" y="-221.41" font-family="Arial" font-size="9.00">usa</text>
+</g>
+<!-- Repo -->
+<g id="node3" class="node">
+<title>Repo</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1850.84,-253.5C1850.84,-253.5 2144.39,-253.5 2144.39,-253.5 2150.39,-253.5 2156.39,-259.5 2156.39,-265.5 2156.39,-265.5 2156.39,-277.5 2156.39,-277.5 2156.39,-283.5 2150.39,-289.5 2144.39,-289.5 2144.39,-289.5 1850.84,-289.5 1850.84,-289.5 1844.84,-289.5 1838.84,-283.5 1838.84,-277.5 1838.84,-277.5 1838.84,-265.5 1838.84,-265.5 1838.84,-259.5 1844.84,-253.5 1850.84,-253.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1911.31" y="-268.5" font-family="Arial" font-size="10.00">Interface: RepositorioTarefas</text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="1983.79,-253.5 1983.79,-289.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1993.18" y="-268.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="2002.57,-253.5 2002.57,-289.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2079.48" y="-268.5" font-family="Arial" font-size="10.00">+ carregar()\l + salvar(tarefas)\l</text>
+</g>
+<!-- Manager&#45;&gt;Repo -->
+<g id="edge4" class="edge">
+<title>Manager-&gt;Repo</title>
+<path fill="none" stroke="black" d="M1470.54,-206.98C1557.27,-215.61 1660.59,-226.46 1753.54,-237.7 1788.29,-241.9 1825.77,-246.89 1860.65,-251.72"/>
+<polygon fill="black" stroke="black" points="1860.13,-254.48 1868.44,-252.81 1860.9,-248.93 1860.13,-254.48"/>
+<text xml:space="preserve" text-anchor="middle" x="1708.51" y="-240.4" font-family="Arial" font-size="9.00">depende da abstração</text>
+</g>
+<!-- Task -->
+<g id="node6" class="node">
+<title>Task</title>
+<path fill="none" stroke="black" d="M1789.54,-171.5C1789.54,-171.5 2205.68,-171.5 2205.68,-171.5 2211.68,-171.5 2217.68,-177.5 2217.68,-183.5 2217.68,-183.5 2217.68,-195.5 2217.68,-195.5 2217.68,-201.5 2211.68,-207.5 2205.68,-207.5 2205.68,-207.5 1789.54,-207.5 1789.54,-207.5 1783.54,-207.5 1777.54,-201.5 1777.54,-195.5 1777.54,-195.5 1777.54,-183.5 1777.54,-183.5 1777.54,-177.5 1783.54,-171.5 1789.54,-171.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1799.99" y="-186.5" font-family="Arial" font-size="10.00">Tarefa</text>
+<polyline fill="none" stroke="black" points="1822.44,-171.5 1822.44,-207.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1938.98" y="-186.5" font-family="Arial" font-size="10.00">+ data: date\l + descricao: str\l + concluida: bool\l</text>
+<polyline fill="none" stroke="black" points="2055.51,-171.5 2055.51,-207.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2136.6" y="-186.5" font-family="Arial" font-size="10.00">+ concluir()\l + para_dicionario()\l</text>
+</g>
+<!-- Manager&#45;&gt;Task -->
+<g id="edge8" class="edge">
+<title>Manager-&gt;Task</title>
+<path fill="none" stroke="black" d="M1639.96,-188.54C1678.31,-188.58 1716.72,-188.63 1753.54,-188.7 1758.3,-188.71 1763.11,-188.72 1767.96,-188.73"/>
+<polygon fill="black" stroke="black" points="1767.8,-191.53 1775.81,-188.75 1767.82,-185.93 1767.8,-191.53"/>
+<text xml:space="preserve" text-anchor="middle" x="1708.51" y="-191.4" font-family="Arial" font-size="9.00">administra 0..*</text>
+</g>
+<!-- Strategy -->
+<g id="node9" class="node">
+<title>Strategy</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1872.08,-69.5C1872.08,-69.5 2123.15,-69.5 2123.15,-69.5 2129.15,-69.5 2135.15,-75.5 2135.15,-81.5 2135.15,-81.5 2135.15,-93.5 2135.15,-93.5 2135.15,-99.5 2129.15,-105.5 2123.15,-105.5 2123.15,-105.5 1872.08,-105.5 1872.08,-105.5 1866.08,-105.5 1860.08,-99.5 1860.08,-93.5 1860.08,-93.5 1860.08,-81.5 1860.08,-81.5 1860.08,-75.5 1866.08,-69.5 1872.08,-69.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1937.56" y="-84.5" font-family="Arial" font-size="10.00">Interface: EstrategiaOrdenacao</text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="2015.05,-69.5 2015.05,-105.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2024.44" y="-84.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="2033.83,-69.5 2033.83,-105.5"/>
+<text xml:space="preserve" text-anchor="middle" x="2084.49" y="-84.5" font-family="Arial" font-size="10.00">+ ordenar(tarefas)\l</text>
+</g>
+<!-- Manager&#45;&gt;Strategy -->
+<g id="edge9" class="edge">
+<title>Manager-&gt;Strategy</title>
+<path fill="none" stroke="black" d="M1407.44,-170.03C1534.33,-152.26 1725.58,-125.47 1855.5,-107.27"/>
+<polygon fill="black" stroke="black" points="1855.71,-110.07 1863.25,-106.18 1854.94,-104.52 1855.71,-110.07"/>
+<text xml:space="preserve" text-anchor="middle" x="1708.51" y="-134.65" font-family="Arial" font-size="9.00">usa opcionalmente</text>
+</g>
+<!-- Json -->
+<g id="node4" class="node">
+<title>Json</title>
+<path fill="none" stroke="black" d="M1130.63,-343.5C1130.63,-343.5 1418.61,-343.5 1418.61,-343.5 1424.61,-343.5 1430.61,-349.5 1430.61,-355.5 1430.61,-355.5 1430.61,-367.5 1430.61,-367.5 1430.61,-373.5 1424.61,-379.5 1418.61,-379.5 1418.61,-379.5 1130.63,-379.5 1130.63,-379.5 1124.63,-379.5 1118.63,-373.5 1118.63,-367.5 1118.63,-367.5 1118.63,-355.5 1118.63,-355.5 1118.63,-349.5 1124.63,-343.5 1130.63,-343.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1165.26" y="-358.5" font-family="Arial" font-size="10.00">RepositorioJSON</text>
+<polyline fill="none" stroke="black" points="1211.88,-343.5 1211.88,-379.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1244.34" y="-358.5" font-family="Arial" font-size="10.00">- caminho\l</text>
+<polyline fill="none" stroke="black" points="1276.79,-343.5 1276.79,-379.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1353.7" y="-358.5" font-family="Arial" font-size="10.00">+ carregar()\l + salvar(tarefas)\l</text>
+</g>
+<!-- Json&#45;&gt;Repo -->
+<g id="edge5" class="edge">
+<title>Json-&gt;Repo</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1423.7,-343.02C1544.82,-327.9 1715.66,-306.57 1839.23,-291.15"/>
+<polygon fill="none" stroke="black" points="1839.33,-293.96 1846.92,-290.19 1838.63,-288.4 1839.33,-293.96"/>
+<text xml:space="preserve" text-anchor="middle" x="1708.51" y="-313.81" font-family="Arial" font-size="9.00">implementa</text>
+</g>
+<!-- Decorator -->
+<g id="node5" class="node">
+<title>Decorator</title>
+<path fill="none" stroke="black" d="M356.65,-296.5C356.65,-296.5 686.87,-296.5 686.87,-296.5 692.87,-296.5 698.87,-302.5 698.87,-308.5 698.87,-308.5 698.87,-320.5 698.87,-320.5 698.87,-326.5 692.87,-332.5 686.87,-332.5 686.87,-332.5 356.65,-332.5 356.65,-332.5 350.65,-332.5 344.65,-326.5 344.65,-320.5 344.65,-320.5 344.65,-308.5 344.65,-308.5 344.65,-302.5 350.65,-296.5 356.65,-296.5"/>
+<text xml:space="preserve" text-anchor="middle" x="405.17" y="-311.5" font-family="Arial" font-size="10.00">RepositorioComBackup</text>
+<polyline fill="none" stroke="black" points="465.69,-296.5 465.69,-332.5"/>
+<text xml:space="preserve" text-anchor="middle" x="505.37" y="-311.5" font-family="Arial" font-size="10.00">- _repositorio\l</text>
+<polyline fill="none" stroke="black" points="545.05,-296.5 545.05,-332.5"/>
+<text xml:space="preserve" text-anchor="middle" x="621.96" y="-311.5" font-family="Arial" font-size="10.00">+ carregar()\l + salvar(tarefas)\l</text>
+</g>
+<!-- Decorator&#45;&gt;Repo -->
+<g id="edge6" class="edge">
+<title>Decorator-&gt;Repo</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M699.08,-309.36C985.6,-301 1548.44,-284.58 1829.15,-276.39"/>
+<polygon fill="none" stroke="black" points="1829.18,-279.19 1837.09,-276.15 1829.01,-273.59 1829.18,-279.19"/>
+<text xml:space="preserve" text-anchor="middle" x="1274.62" y="-305.41" font-family="Arial" font-size="9.00">implementa</text>
+</g>
+<!-- Decorator&#45;&gt;Json -->
+<g id="edge7" class="edge">
+<title>Decorator-&gt;Json</title>
+<path fill="none" stroke="black" d="M699.28,-325.55C823.18,-333.3 987.72,-343.6 1108.92,-351.19"/>
+<polygon fill="black" stroke="black" points="1108.63,-353.98 1116.79,-351.68 1108.98,-348.39 1108.63,-353.98"/>
+<text xml:space="preserve" text-anchor="middle" x="870.26" y="-339.29" font-family="Arial" font-size="9.00">envolve</text>
+</g>
+<!-- Factory -->
+<g id="node7" class="node">
+<title>Factory</title>
+<path fill="none" stroke="black" d="M384.3,-384.5C384.3,-384.5 659.22,-384.5 659.22,-384.5 665.22,-384.5 671.22,-390.5 671.22,-396.5 671.22,-396.5 671.22,-408.5 671.22,-408.5 671.22,-414.5 665.22,-420.5 659.22,-420.5 659.22,-420.5 384.3,-420.5 384.3,-420.5 378.3,-420.5 372.3,-414.5 372.3,-408.5 372.3,-408.5 372.3,-396.5 372.3,-396.5 372.3,-390.5 378.3,-384.5 384.3,-384.5"/>
+<text xml:space="preserve" text-anchor="middle" x="435.32" y="-399.5" font-family="Arial" font-size="10.00">CriadorRepositorioJSON</text>
+<polyline fill="none" stroke="black" points="498.34,-384.5 498.34,-420.5"/>
+<text xml:space="preserve" text-anchor="middle" x="530.79" y="-399.5" font-family="Arial" font-size="10.00">- caminho\l</text>
+<polyline fill="none" stroke="black" points="563.24,-384.5 563.24,-420.5"/>
+<text xml:space="preserve" text-anchor="middle" x="617.23" y="-399.5" font-family="Arial" font-size="10.00">+ criar_repositorio()\l</text>
+</g>
+<!-- Factory&#45;&gt;Json -->
+<g id="edge1" class="edge">
+<title>Factory-&gt;Json</title>
+<path fill="none" stroke="black" d="M671.35,-387.16C728.61,-381.77 794.66,-376.2 854.75,-372.7 938.49,-367.83 1031.78,-365.07 1109.02,-363.51"/>
+<polygon fill="black" stroke="black" points="1108.9,-366.32 1116.85,-363.36 1108.79,-360.72 1108.9,-366.32"/>
+<text xml:space="preserve" text-anchor="middle" x="870.26" y="-375.4" font-family="Arial" font-size="9.00">cria</text>
+</g>
+<!-- Factory&#45;&gt;Json -->
+<g id="edge12" class="edge">
+<title>Factory-&gt;Json</title>
+<path fill="none" stroke="black" d="M671.58,-396.03C737.26,-393.05 815.37,-389.33 885.77,-385.5 959.1,-381.51 1040.2,-376.58 1109.2,-372.22"/>
+<polygon fill="black" stroke="black" points="1109.1,-375.03 1116.91,-371.73 1108.75,-369.44 1109.1,-375.03"/>
+<text xml:space="preserve" text-anchor="middle" x="870.26" y="-389.77" font-family="Arial" font-size="9.00">cria</text>
+</g>
+<!-- FactoryBase -->
+<g id="node8" class="node">
+<title>FactoryBase</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1173.56,-451.5C1173.56,-451.5 1375.68,-451.5 1375.68,-451.5 1381.68,-451.5 1387.68,-457.5 1387.68,-463.5 1387.68,-463.5 1387.68,-475.5 1387.68,-475.5 1387.68,-481.5 1381.68,-487.5 1375.68,-487.5 1375.68,-487.5 1173.56,-487.5 1173.56,-487.5 1167.56,-487.5 1161.56,-481.5 1161.56,-475.5 1161.56,-475.5 1161.56,-463.5 1161.56,-463.5 1161.56,-457.5 1167.56,-451.5 1173.56,-451.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1211.24" y="-466.5" font-family="Arial" font-size="10.00">CriadorRepositorio</text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="1260.93,-451.5 1260.93,-487.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1270.32" y="-466.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" stroke-dasharray="5,2" points="1279.71,-451.5 1279.71,-487.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1333.69" y="-466.5" font-family="Arial" font-size="10.00">+ criar_repositorio()\l</text>
+</g>
+<!-- Factory&#45;&gt;FactoryBase -->
+<g id="edge2" class="edge">
+<title>Factory-&gt;FactoryBase</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M671.55,-415.78C812.26,-428.33 1020.83,-446.94 1151.89,-458.64"/>
+<polygon fill="none" stroke="black" points="1151.46,-461.41 1159.68,-459.33 1151.96,-455.83 1151.46,-461.41"/>
+<text xml:space="preserve" text-anchor="middle" x="870.26" y="-436.69" font-family="Arial" font-size="9.00">herda</text>
+</g>
+<!-- Date -->
+<g id="node10" class="node">
+<title>Date</title>
+<path fill="none" stroke="black" d="M1181.89,-69.5C1181.89,-69.5 1367.35,-69.5 1367.35,-69.5 1373.35,-69.5 1379.35,-75.5 1379.35,-81.5 1379.35,-81.5 1379.35,-93.5 1379.35,-93.5 1379.35,-99.5 1373.35,-105.5 1367.35,-105.5 1367.35,-105.5 1181.89,-105.5 1181.89,-105.5 1175.89,-105.5 1169.89,-99.5 1169.89,-93.5 1169.89,-93.5 1169.89,-81.5 1169.89,-81.5 1169.89,-75.5 1175.89,-69.5 1181.89,-69.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1214.57" y="-84.5" font-family="Arial" font-size="10.00">OrdenarPorData</text>
+<polyline fill="none" stroke="black" points="1259.26,-69.5 1259.26,-105.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1268.64" y="-84.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1278.03,-69.5 1278.03,-105.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1328.69" y="-84.5" font-family="Arial" font-size="10.00">+ ordenar(tarefas)\l</text>
+</g>
+<!-- Date&#45;&gt;Strategy -->
+<g id="edge10" class="edge">
+<title>Date-&gt;Strategy</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1379.69,-87.5C1503.42,-87.5 1710.71,-87.5 1850.48,-87.5"/>
+<polygon fill="none" stroke="black" points="1850.08,-90.3 1858.08,-87.5 1850.08,-84.7 1850.08,-90.3"/>
+</g>
+<!-- Desc -->
+<g id="node11" class="node">
+<title>Desc</title>
+<path fill="none" stroke="black" d="M1170.22,-0.5C1170.22,-0.5 1379.02,-0.5 1379.02,-0.5 1385.02,-0.5 1391.02,-6.5 1391.02,-12.5 1391.02,-12.5 1391.02,-24.5 1391.02,-24.5 1391.02,-30.5 1385.02,-36.5 1379.02,-36.5 1379.02,-36.5 1170.22,-36.5 1170.22,-36.5 1164.22,-36.5 1158.22,-30.5 1158.22,-24.5 1158.22,-24.5 1158.22,-12.5 1158.22,-12.5 1158.22,-6.5 1164.22,-0.5 1170.22,-0.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1214.57" y="-15.5" font-family="Arial" font-size="10.00">OrdenarPorDescricao</text>
+<polyline fill="none" stroke="black" points="1270.92,-0.5 1270.92,-36.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1280.31" y="-15.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1289.7,-0.5 1289.7,-36.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1340.36" y="-15.5" font-family="Arial" font-size="10.00">+ ordenar(tarefas)\l</text>
+</g>
+<!-- Desc&#45;&gt;Strategy -->
+<g id="edge11" class="edge">
+<title>Desc-&gt;Strategy</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1391.16,-29.16C1462.69,-35.8 1556.42,-44.55 1639.47,-52.5 1708.78,-59.13 1785.63,-66.65 1850.24,-73.01"/>
+<polygon fill="none" stroke="black" points="1849.94,-75.79 1858.17,-73.79 1850.49,-70.22 1849.94,-75.79"/>
+</g>
+<!-- Main -->
+<g id="node12" class="node">
+<title>Main</title>
+<path fill="none" stroke="black" d="M12,-256.5C12,-256.5 115.75,-256.5 115.75,-256.5 121.75,-256.5 127.75,-262.5 127.75,-268.5 127.75,-268.5 127.75,-280.5 127.75,-280.5 127.75,-286.5 121.75,-292.5 115.75,-292.5 115.75,-292.5 12,-292.5 12,-292.5 6,-292.5 0,-286.5 0,-280.5 0,-280.5 0,-268.5 0,-268.5 0,-262.5 6,-256.5 12,-256.5"/>
+<text xml:space="preserve" text-anchor="middle" x="25.51" y="-271.5" font-family="Arial" font-size="10.00">main.py</text>
+<polyline fill="none" stroke="black" points="51.01,-256.5 51.01,-292.5"/>
+<text xml:space="preserve" text-anchor="middle" x="60.4" y="-271.5" font-family="Arial" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="69.79,-256.5 69.79,-292.5"/>
+<text xml:space="preserve" text-anchor="middle" x="98.77" y="-271.5" font-family="Arial" font-size="10.00">+ main()\l</text>
+</g>
+<!-- Main&#45;&gt;Interface -->
+<g id="edge16" class="edge">
+<title>Main-&gt;Interface</title>
+<path fill="none" stroke="black" d="M127.8,-261.12C135.83,-259.77 143.96,-258.58 151.75,-257.7 168.56,-255.81 185.83,-254.18 203.29,-252.77"/>
+<polygon fill="black" stroke="black" points="203.16,-255.59 210.92,-252.18 202.73,-250.01 203.16,-255.59"/>
+<text xml:space="preserve" text-anchor="middle" x="170.26" y="-260.4" font-family="Arial" font-size="9.00">inicia</text>
+</g>
+<!-- Main&#45;&gt;Manager -->
+<g id="edge15" class="edge">
+<title>Main-&gt;Manager</title>
+<path fill="none" stroke="black" d="M92.31,-256.04C120.94,-237.95 167.86,-211.55 212.77,-200.7 528.1,-124.48 911.69,-147.36 1120.35,-169.06"/>
+<polygon fill="black" stroke="black" points="1119.79,-171.82 1128.04,-169.87 1120.37,-166.25 1119.79,-171.82"/>
+<text xml:space="preserve" text-anchor="middle" x="521.76" y="-203.4" font-family="Arial" font-size="9.00">configura</text>
+</g>
+<!-- Main&#45;&gt;Decorator -->
+<g id="edge14" class="edge">
+<title>Main-&gt;Decorator</title>
+<path fill="none" stroke="black" d="M127.78,-280.02C181.37,-284.72 261.17,-291.72 334.89,-298.19"/>
+<polygon fill="black" stroke="black" points="334.6,-300.98 342.81,-298.89 335.09,-295.4 334.6,-300.98"/>
+<text xml:space="preserve" text-anchor="middle" x="170.26" y="-287.93" font-family="Arial" font-size="9.00">configura</text>
+</g>
+<!-- Main&#45;&gt;Factory -->
+<g id="edge13" class="edge">
+<title>Main-&gt;Factory</title>
+<path fill="none" stroke="black" d="M94.59,-292.93C123.67,-310.14 169.73,-335.24 212.77,-349.5 260.43,-365.29 313.88,-376.59 362.7,-384.58"/>
+<polygon fill="black" stroke="black" points="362.24,-387.34 370.58,-385.84 363.13,-381.81 362.24,-387.34"/>
+<text xml:space="preserve" text-anchor="middle" x="170.26" y="-342.76" font-family="Arial" font-size="9.00">compõe</text>
+</g>
+</g>
+</svg>
